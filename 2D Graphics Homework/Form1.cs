@@ -26,7 +26,7 @@ namespace _2D_Graphics_Homework
             FontFamily fontFamily = new FontFamily("Arial");
             Font font = new Font(fontFamily, 16, FontStyle.Regular);
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 Palette[i] = ColorTranslator.FromHtml(HexPalette[i]);
             }
@@ -71,6 +71,16 @@ namespace _2D_Graphics_Homework
             e.Graphics.DrawLine(Brush5Pen, 10, 25, 40, 25);
             e.Graphics.DrawLine(Brush5Pen, 10, 35, 40, 35);
 
+
+            //800, 450 is the corner point
+            string Back = "Back";
+            Point[] Hexagon = new Point[] { new Point(738,378), new Point(777, 378), new Point(797, 408), new Point(777, 438), new Point(737, 438), new Point(717, 408) };
+            e.Graphics.FillPolygon(Brush6, Hexagon);
+            e.Graphics.DrawPolygon(Brush5Pen, Hexagon);
+            e.Graphics.DrawString(Back, font, Brush5, 730, 400);
+
+            Rectangle BoundRectangle = new Rectangle(215, 150, 170, 200);
+            e.Graphics.FillEllipse(Brush3, BoundRectangle);
 
 
 
